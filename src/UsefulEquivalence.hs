@@ -21,9 +21,11 @@ validUsefulEquivalences =
     && form9b
 
 -- law of double negation
+
 form1 = logEquiv1 id (\p -> not (not p))
 
 -- laws of idempotence
+
 form2a = logEquiv1 id (\p -> p && p)
 
 form2b = logEquiv1 id (\p -> p || p)
@@ -55,6 +57,7 @@ form7a = logEquiv2 (\p q -> not (p && q)) (\p q -> not p || not q)
 form7b = logEquiv2 (\p q -> not (p || q)) (\p q -> not p && not q)
 
 -- laws of associativity
+
 form8 = logEquiv3 (\p q r -> p && (q && r)) (\p q r -> (p && q) && r)
 
 -- distribution laws
