@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a00848711c453fba8f3efee7fe738d110561a37be54b7b9434e67d39007d0cec
+-- hash: d343b38967c0794c6433ec7ca348d14d0c6663553f8765987721f5b41a19cc3c
 
 name:           logichs
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Logic
+      UsefulEquivalence
   other-modules:
       Paths_logichs
   hs-source-dirs:

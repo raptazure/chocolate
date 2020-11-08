@@ -26,6 +26,7 @@ library:
   source-dirs: src
   exposed-modules:
     - Logic
+    - UsefulEquivalence
 
 executables:
   logichs-exe:

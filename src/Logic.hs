@@ -6,6 +6,9 @@ module Logic
     valid2,
     valid3,
     valid4,
+    logEquiv1,
+    logEquiv2,
+    logEquiv3,
   )
 where
 
@@ -82,4 +85,34 @@ valid4 bf =
         q <- [True, False],
         r <- [True, False],
         s <- [True, False]
+    ]
+
+{- Logical Equivalence -}
+
+-- test the formula Φ ⇔ Ψ by the truth table method
+logEquiv1 :: (Bool -> Bool) -> (Bool -> Bool) -> Bool
+logEquiv1 bf1 bf2 =
+  (bf1 True <=> bf2 True) && (bf1 False <=> bf2 False)
+
+logEquiv2 ::
+  (Bool -> Bool -> Bool) ->
+  (Bool -> Bool -> Bool) ->
+  Bool
+logEquiv2 bf1 bf2 =
+  and
+    [ (bf1 p q) <=> (bf2 p q)
+      | p <- [True, False],
+        q <- [True, False]
+    ]
+
+logEquiv3 ::
+  (Bool -> Bool -> Bool -> Bool) ->
+  (Bool -> Bool -> Bool -> Bool) ->
+  Bool
+logEquiv3 bf1 bf2 =
+  and
+    [ (bf1 p q r) <=> (bf2 p q r)
+      | p <- [True, False],
+        q <- [True, False],
+        r <- [True, False]
     ]
