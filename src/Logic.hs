@@ -2,8 +2,14 @@ module Logic
   ( (==>),
     (<=>),
     (<+>),
+    valid1,
+    valid2,
+    valid3,
+    valid4,
   )
 where
+
+{- Logical Connectives -}
 
 -- and ∧ conjunction
 -- or ∨ disjunction
@@ -23,6 +29,7 @@ where
 -- not True = False
 -- not False = True
 
+-- ∧ and ∨ bind more strongly than ⇒ and ⇔
 infix 1 ==>
 
 (==>) :: Bool -> Bool -> Bool
@@ -44,3 +51,35 @@ infixr 2 <+>
 
 (<+>) :: Bool -> Bool -> Bool
 x <+> y = x /= y
+
+{- Logic Validity -}
+
+valid1 :: (Bool -> Bool) -> Bool
+valid1 bf = (bf True) && (bf False)
+
+valid2 :: (Bool -> Bool -> Bool) -> Bool
+valid2 bf =
+  (bf True True)
+    && (bf True False)
+    && (bf True False)
+    && (bf False True)
+    && (bf False False)
+
+valid3 :: (Bool -> Bool -> Bool -> Bool) -> Bool
+valid3 bf =
+  and
+    [ bf p q r
+      | p <- [True, False],
+        q <- [True, False],
+        r <- [True, False]
+    ]
+
+valid4 :: (Bool -> Bool -> Bool -> Bool -> Bool) -> Bool
+valid4 bf =
+  and
+    [ bf p q r s
+      | p <- [True, False],
+        q <- [True, False],
+        r <- [True, False],
+        s <- [True, False]
+    ]
