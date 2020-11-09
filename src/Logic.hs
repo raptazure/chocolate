@@ -9,6 +9,8 @@ module Logic
     logEquiv1,
     logEquiv2,
     logEquiv3,
+    every,
+    some,
   )
 where
 
@@ -116,3 +118,9 @@ logEquiv3 bf1 bf2 =
         q <- [True, False],
         r <- [True, False]
     ]
+
+{- quantifier procedures -}
+
+every, some :: [a] -> (a -> Bool) -> Bool
+every xs p = all p xs
+some xs p = any p xs

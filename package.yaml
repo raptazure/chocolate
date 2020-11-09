@@ -27,6 +27,7 @@ library:
   exposed-modules:
     - Logic
     - UsefulEquivalence
+    - Groups
 
 executables:
   logichs-exe:

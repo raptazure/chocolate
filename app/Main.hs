@@ -1,7 +1,17 @@
 module Main where
 
+import Groups
 import Logic
-import UsefulEquivalence
+  ( every,
+    logEquiv3,
+    some,
+    valid1,
+    valid2,
+    valid3,
+    (<=>),
+    (==>),
+  )
+import UsefulEquivalence (validUsefulEquivalences)
 
 -- ¬P ∧ ((P ⇒Q)⇔¬(Q ∧ ¬P))
 
@@ -21,11 +31,19 @@ formula5 p q r = (p ==> r) && (q ==> r)
 
 formula6 p q r = ((p || q) ==> r) <=> ((p ==> r) && (q ==> r))
 
+-- ∀x ∈ {1, 4, 9}∃y ∈ {1, 2, 3} x = y2
+formula7 = every [1, 4, 9] (\x -> some [1, 2, 3] (\y -> x == y ^ 2))
+
 main :: IO ()
 main = do
+  -- solving A + B
+  -- (sum <$> (map read . words) `fmap` getLine) >>= (\a -> print a)
   print $ formula1 True False
   print $ valid1 excluded_middle
   print $ valid2 formula2
   print $ valid2 formula3
   print $ (logEquiv3 formula4 formula5) == (valid3 formula6)
   print validUsefulEquivalences
+  print formula7
+  print $ getSum $ invert $ Sum (-1)
+  print $ getProduct $ invert $ Product (3 / 4)
