@@ -1,6 +1,6 @@
 # discrete.rev
 
-Preparing Discrete Mathematics II examination with Haskell...
+Preparing for Discrete Mathematics II exam with Haskell...
 
 #### Logic
 - Define logical connectives
