@@ -39,7 +39,7 @@ infix 1 ==>
 
 (==>) :: Bool -> Bool -> Bool
 -- an implication should be false in the only remaining case that the antecedent is true and the consequent false
-x ==> y = (not x) || y
+x ==> y = not x || y
 
 -- or
 -- (==>) :: Bool -> Bool -> Bool
@@ -60,15 +60,15 @@ x <+> y = x /= y
 {- Logic Validity -}
 
 valid1 :: (Bool -> Bool) -> Bool
-valid1 bf = (bf True) && (bf False)
+valid1 bf = bf True && bf False
 
 valid2 :: (Bool -> Bool -> Bool) -> Bool
 valid2 bf =
-  (bf True True)
-    && (bf True False)
-    && (bf True False)
-    && (bf False True)
-    && (bf False False)
+  bf True True
+    && bf True False
+    && bf True False
+    && bf False True
+    && bf False False
 
 valid3 :: (Bool -> Bool -> Bool -> Bool) -> Bool
 valid3 bf =
@@ -102,7 +102,7 @@ logEquiv2 ::
   Bool
 logEquiv2 bf1 bf2 =
   and
-    [ (bf1 p q) <=> (bf2 p q)
+    [ bf1 p q <=> bf2 p q
       | p <- [True, False],
         q <- [True, False]
     ]
@@ -113,7 +113,7 @@ logEquiv3 ::
   Bool
 logEquiv3 bf1 bf2 =
   and
-    [ (bf1 p q r) <=> (bf2 p q r)
+    [ bf1 p q r <=> bf2 p q r
       | p <- [True, False],
         q <- [True, False],
         r <- [True, False]
