@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f20e6eda7a3d83b89a9c7718cdfa0509a9ae67894a4e0b2f37268afca070c4eb
+-- hash: 4ce0a24042a06124516c02bb3db34821c6066ba9e73a0598b81b540787be1ffc
 
 name:           logichs
 version:        0.1.0.0
@@ -30,12 +30,18 @@ library
       Logic
       UsefulEquivalence
       Groups
+      Ring
   other-modules:
+      Lattice
       Paths_logichs
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , containers
+    , hashable
+    , universe-base
+    , unordered-containers
   default-language: Haskell2010
 
 executable logichs-exe
@@ -47,7 +53,11 @@ executable logichs-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , hashable
     , logichs
+    , universe-base
+    , unordered-containers
   default-language: Haskell2010
 
 test-suite logichs-test
@@ -60,5 +70,9 @@ test-suite logichs-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , hashable
     , logichs
+    , universe-base
+    , unordered-containers
   default-language: Haskell2010
