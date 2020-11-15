@@ -16,10 +16,10 @@ import UsefulEquivalence (validUsefulEquivalences)
 -- ¬P ∧ ((P ⇒Q)⇔¬(Q ∧ ¬P))
 
 formula1 :: Bool -> Bool -> Bool
-formula1 p q = (not p) && (p ==> q) <=> not (q && (not p))
+formula1 p q = not p && (p ==> q) <=> not (q && not p)
 
-excluded_middle :: Bool -> Bool
-excluded_middle p = p || not p
+excludedMiddle :: Bool -> Bool
+excludedMiddle p = p || not p
 
 formula2 p q = p ==> (q ==> p)
 
@@ -39,10 +39,10 @@ main = do
   -- solving A + B
   -- (sum <$> (map read . words) `fmap` getLine) >>= (\a -> print a)
   print $ formula1 True False
-  print $ valid1 excluded_middle
+  print $ valid1 excludedMiddle
   print $ valid2 formula2
   print $ valid2 formula3
-  print $ (logEquiv3 formula4 formula5) == (valid3 formula6)
+  print $ logEquiv3 formula4 formula5 == valid3 formula6
   print validUsefulEquivalences
   print formula7
   print $ getSum $ invert $ Sum (-1)

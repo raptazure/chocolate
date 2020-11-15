@@ -1,6 +1,7 @@
 module Groups
   ( Semigroup,
     Monoid,
+    Group,
     (<>),
     mempty,
     mappend,
