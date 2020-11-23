@@ -1,6 +1,6 @@
-# discrete.rev
+# abstract.log
 
-Preparing for Discrete Mathematics II exam with Haskell...
+A Haskell representation of Logic and Abstract Algebra.
 
 #### Logic
 - Define logical connectives
