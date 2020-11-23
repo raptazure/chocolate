@@ -1,6 +1,6 @@
 # abstract.log
 
-A Haskell representation of Logic and Abstract Algebra.
+Haskell representation of Logic and Abstract Algebra.
 
 #### Logic
 - Define logical connectives
