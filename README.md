@@ -1,15 +1,22 @@
-# abstract.log
+# Chocolate
 
-Talking about Logic and Abstract Algebra in Haskell.
+Talking about classical logic and abstract algebra in Haskell.
 
-#### Logic
-- Define logical connectives
-- Logic validity, find tautologies
-- Test logical equivalence
-- Some useful equivalences 
+### Classical Logic
+- Logical connectives
+- Logic validity
+- Logical equivalence
 - Quantifier procedures
+- ...
   
-#### Algebraic structure
-- Semigroup, Monoid, Group, Abelian and Cyclic...
-- Semiring and Ring...
-- Unbounded Lattice, Bounded Lattice and PartialOrd...
+### Abstract Algebra
+- Semigroup
+- Monoid
+- Group
+- Abelian
+- Cyclic
+- Semiring
+- Ring
+- Unbounded & Bounded Lattice
+- PartialOrd
+- ...
