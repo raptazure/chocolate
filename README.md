@@ -3,20 +3,23 @@
 Talking about classical logic and abstract algebra in Haskell.
 
 ### Classical Logic
-- Logical connectives
+
 - Logic validity
+- Logical connectives
 - Logical equivalence
 - Quantifier procedures
 - ...
   
 ### Abstract Algebra
-- Semigroup
-- Monoid
-- Group
-- Abelian
-- Cyclic
-- Semiring
+
 - Ring
-- Unbounded & Bounded Lattice
+- Group
+- Cyclic
+- Monoid
+- Abelian
+- Semiring
+- Semigroup
 - PartialOrd
+- Bounded Lattice
+- Unbounded Lattice
 - ...
